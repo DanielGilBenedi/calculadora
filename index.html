@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+{
+background-color:tan;
+}
+
+h3{
+  position:relative;
+  top:100px;
+  left:550px;
+}
+.boxCient{
+  background-color:#3d4543;
+  height:310px;
+  width:450px;
+  border-radius:10px;
+position:relative;
+top:80px;
+left:31%;
+display: none;
+}
+.box
+{
+background-color:#3d4543;
+height:310px;
+width:250px;
+border-radius:10px;
+position:relative;
+top:80px;
+left:40%;
+}
+.displayCient
+{
+width:420px;
+position:relative;
+left:15px;
+top:20px;
+height:40px;
+font-size: 25px;
+}
+.displayCient input
+{
+position:relative;
+left:0px;
+top:2px;
+height:35px;
+width:420px;
+color:black;
+background-color:#bccccc;
+font-size:21px;
+text-align:right;
+}
+
+.display
+{
+width:220px;
+position:relative;
+left:15px;
+top:20px;
+height:40px;
+font-size: 25px;
+}
+.display input
+{
+position:relative;
+left:0px;
+top:2px;
+height:35px;
+width:215px;
+color:black;
+background-color:#bccccc;
+font-size:21px;
+text-align:right;
+}
+
+.keys
+{
+position:relative;
+top:15px;
+}
+.button
+{
+width:40px;
+height:30px;
+border:none;
+border-radius:8px;
+margin-left:17px;
+cursor:pointer;
+border-top:2px solid transparent;
+}
+.button.gray
+{
+color:white;
+background-color:#006b99;
+border-bottom:black 2px solid;
+border-top:2px #6f6f6f solid;
+}
+.button.pink
+{
+color:black;
+background-color:#006b99;
+border-bottom:black 2px solid;
+}
+.button.black
+{
+color:white;
+background-color:#303030;
+border-bottom:black 2px solid;
+border-top:2px 303030 solid;
+}
+.button.orange
+{
+color:black;
+background-color:FF9933;
+border-bottom:black 2px solid;
+border-top:2px FF9933 solid;
+}
+.gray:active
+{
+border-top:black 2px solid;
+border-bottom:2px #6f6f6f solid;
+}
+.pink:active
+{
+border-top:black 2px solid;
+border-bottom:#ff4561 2px solid;
+}
+.black:active
+{
+border-top:black 2px solid;
+border-bottom:#303030 2px solid;
+}
+.orange:active
+{
+border-top:black 2px solid;
+border-bottom:FF9933 2px solid;
+}
+
+.orange:hover
+{
+border-top:black 2px solid;
+border-bottom:FF9933 2px solid;
+background-color: orange;
+}
+p
+{
+line-height:10px;
+}
+.content.change{
+  margin-left: 40%;
+  margin-top: 410px;
+  position: absolute;
+  display: inline-block;
+  
+}
+.button.change{
+  background-color: #3e8e41;
+ 
+  width: 90px;
+  font-size: 16px;
+  color: white;
+  border-radius:10px;
+
+}
+.dropbtn {
+  border-radius:10px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  margin-left: 42%;
+  margin-top: 20px;
+  position: absolute;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+.box3
+{
+background-color:#000000;
+height:310px;
+width:250px;
+border-radius:10px;
+position:relative;
+top:80px;
+left:36%;
+}
+
+.buttonCanvas{
+  margin-left: 49%;
+  margin-top: 100px;
+}
+.canvasBtn{
+  background-color: #3e8e41;
+  position: absolute;
+  width: 120px;
+  font-size: 16px;
+  color: white;
+  border-radius:10px;
+  width:90px;
+height:30px;
+border:none;
+border-radius:8px;
+margin-left:17px;
+cursor:pointer;
+border-top:2px solid transparent;
+}
+
+.modalContainer {
+  display: none; 
+  position: fixed; 
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modalContainer .modal-content {
+  background-color:#dbdddd ;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-top: 10px solid rgb(67, 94, 145);
+  width: 60%;
+  height: 70%;
+}
+
+.modalContainer .close {
+  color: rgb(67, 94, 145);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modalContainer .close:hover,
+.modalContainer .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#miCanvas{
+  
+  border: solid 2px black;
+}
+#pantallaCanvas{
+ margin-left: 23%;
+
+}
+.contenidoIntroducir{
+  margin-top: 3%;
+  width: 400px;
+  padding: 10px;
+}
+.datosCanvas{
+  width: 200px;
+}
+.botonCanvas{
+  background-color: #3e8e41;
+  position: absolute;
+  width: 120px;
+  font-size: 16px;
+  color: white;
+  border-radius:10px;
+  width:90px;
+height:30px;
+border:none;
+border-radius:8px;
+margin-left:17px;
+cursor:pointer;
+border-top:2px solid transparent;
+}
+
+.botonesCanvas{
+  position: absolute;
+  margin-left: 34%;
+}
+    </style>
+</head>
+
+
+<body>
+    
+    <div class="content change">
+    <input type="button" id="tipoCalculadora" class="button change" value="Científica" onclick="cambiarCalculadora()">
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Estilo de la calculadora</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="cambiarOscuro()">Oscura</a>
+          <a href="#" onclick="cambiarClaro()">Clara</a>
+          <a href="#" onclick="cambiarRojo()">Roja</a>
+        </div>
+    </div>
+
+     
+
+    <div class="box" id="box">
+    
+<div class="display" size="18" id="display" >
+    
+    <input type="text" value="" size="18" class="display" id="displayValor">
+</div>
+<div class="keys">
+<p>
+    <input type="button" id="caracteres" class="button pink" value="%" onclick="getValue(this)">
+    <input type="button" id="caracteres" class="button pink" value="+/-" onclick="getValue(this)">
+    <input type="button" id="caracteres" class="button pink" value="/" onclick="getValue(this)">
+    <input type="button" id="caracteres" class="button pink" value="AC" onclick="getValue(this)">
+</p>
+
+<p>
+    <input type="button" id="numeros" class="button black" value="7" onclick="getValue(this)">
+    <input type="button" id="numeros" class="button black" value="8" onclick="getValue(this)">
+    <input type="button" id="numeros" class="button black" value="9" onclick="getValue(this)">
+    <input type="button" id="caracteres" class="button pink" value="*" onclick="getValue(this)">
+</p>
+
+<p>
+    <input type="button" id="numeros" class="button black" value="4" onclick="getValue(this)">
+    <input type="button" id="numeros" class="button black" value="5" onclick="getValue(this)">
+    <input type="button" id="numeros" class="button black" value="6"onclick="getValue(this)">
+    <input type="button" id="caracteres" class="button pink" value="-" onclick="getValue(this)">
+</p>
+<p>
+    <input type="button" id="numeros" class="button black" value="1" onclick="getValue(this)">
+    <input type="button" id="numeros" class="button black" value="2" onclick="getValue(this)">
+    <input type="button" id="numeros" class="button black" value="3" onclick="getValue(this)">
+    <input type="button" id="caracteres" class="button pink" value="+" onclick="getValue(this)">
+</p>
+<p>
+    <input type="button" id="numeros" class="button black" value="0" onclick="getValue(this)">
+    <input type="button" id="numeros" class="button black" value="," onclick="getValue(this)">
+    <input type="button" id="C" class="button black" value="C" onclick="getValue(this)">
+    <input type="button" id="igual" class="button orange" value="="onclick="getValue(this)">
+</p>
+</div>
+</div>
+
+<!-- Calculadora Cientifica oculta-->
+<div class="boxCient" id="boxCient">
+    <div class="displayCient" size="18" id="displayCient">
+        <input type="text" value="" size="18" class="displayCient" id="displayValor2">
+    </div>
+    <div class="keys">
+    <p>
+        <input type="button" id="caracteres" class="button pink" value="+/-" onclick="getValue(this)">
+        <input type="button" id="caracteres" class="button pink" value="x!" onclick="getValue(this)">
+        <input type="button" id="caracteres" class="button pink" value="%" onclick="getValue(this)"> 
+        <input type="button" id="caracteres" class="button pink" value="(" onclick="getValue(this)">
+        <input type="button" id="caracteres" class="button pink" value=")" onclick="getValue(this)">
+        <input type="button" id="caracteres" class="button pink" value="/" onclick="getValue(this)">
+        <input type="button" id="caracteres" class="button pink" value="AC" onclick="getValue(this)">
+    </p>
+    
+    <p>
+        <input type="button" id="numeros" class="button black" value="lo2" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="sin" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="log" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="7" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="8" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="9" onclick="getValue(this)">
+        <input type="button" id="caracteres" class="button pink" value="*" onclick="getValue(this)">
+    </p>
+    
+    <p>
+        <input type="button" id="numeros" class="button black" value="&#928" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="cos" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="ln"onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="4" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="5" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="6"onclick="getValue(this)">
+        <input type="button" id="caracteres" class="button pink" value="-" onclick="getValue(this)">
+    </p>
+    <p>
+        <input type="button" id="numeros" class="button black" value="E" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="tan" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="&#8730" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="1" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="2" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="3" onclick="getValue(this)">
+        <input type="button" id="caracteres" class="button pink" value="+" onclick="getValue(this)">
+    </p>
+    <p>
+        
+        <input type="button" id="numeros" class="button black" value="Abs" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="&#8730n" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="x^y" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="0" onclick="getValue(this)">
+        <input type="button" id="numeros" class="button black" value="," onclick="getValue(this)">
+        <input type="button" id="C" class="button black" value="C" onclick="getValue(this)">
+        <input type="button" id="igual" class="button orange" value="="onclick="getValue(this)">
+    </p>
+    </div>
+
+
+</div >
+
+<div class="buttonCanvas">
+    <input type="button" id="canvasBtn" value="Gráficos" class="canvasBtn" onclick="ventana()">
+</div>
+
+<div id="tvesModal" class="modalContainer">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <div id="pantallaCanvas" class="pantallaCanvas">
+            <div class="botonesCanvas">
+            <p>
+            <input type="button" id="numeros" class="button pink" value="sin" onclick="getValueCan(this)">
+            </p>
+            <p>
+            <input type="button" id="numeros" class="button pink" value="cos" onclick="getValueCan(this)">
+            </p>
+            <p>
+            <input type="button" id="numeros" class="button pink" value="tan" onclick="getValueCan(this)">
+            </p>
+            <p>
+            <input type="button" id="numeros" class="button pink" value="log" onclick="getValueCan(this)">
+            </p>
+            <p>
+            <input type="button" id="numeros" class="button pink" value="x^" onclick="getValueCan(this)">
+            </p>
+            <p>
+            <input type="button" id="numeros" class="button pink" value="√" onclick="getValueCan(this)">
+            </p>
+            <p>
+                <input type="button" id="numeros" class="button pink" value="AC" onclick="getValueCan(this)">
+                </p>
+            </div>
+            <canvas id="miCanvas" width="400" height="400"></canvas>  
+            <div class="contenidoIntroducir">
+            <label class="introDatos">Función</label>
+            <input type="text" value="" class="datosCanvas" id="datosCanvas">
+            <input type="button" class="botonCanvas" value="Pintar" onclick="pintar()">
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+
+</body>
+</html>
